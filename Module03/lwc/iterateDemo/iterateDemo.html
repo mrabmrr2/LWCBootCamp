@@ -1,0 +1,46 @@
+<template>
+    <lightning-card  title="For:Each Demo">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Index">Index</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Id">Id</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={contacts.length} for:each={contacts} for:item='contact' for:index='index'>
+                    <tr class="slds-hint-parent" key={contact.index}>
+                        <td data-label="Index">
+                            <div class="slds-truncate" title={index}>{index}</div>
+                        </td>
+                        <td data-label="Id">
+                            <div class="slds-truncate" title={contact.id}>{contact.id}</div>
+                        </td>
+                        <td data-label="Name">
+                            <div class="slds-truncate" title={contact.id}>{contact.name}</div>
+                        </td>
+                        <td data-label="Email">
+                            <div class="slds-truncate" title={contact.id}>{contact.email}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+    <br>
+    <lightning-card  title="Iterator Demo">
+        <template iterator:contact={contacts}>
+            <p key={contact.value.id}>{contact.value.name} - {contact.value.email}</p>
+        </template>
+    </lightning-card>
+</template>
