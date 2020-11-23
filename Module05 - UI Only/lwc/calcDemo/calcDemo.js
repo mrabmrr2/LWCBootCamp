@@ -10,6 +10,11 @@ export default class CalcDemo extends LightningElement {
         this.result = "";
     }
 
+    clickEqual(){
+        this.result = this.calcExpression;
+        this.calcExpression = "";
+    }
+    
     handleClick(event) {
         this.calcExpression = this.calcExpression + event.target.label;
         
