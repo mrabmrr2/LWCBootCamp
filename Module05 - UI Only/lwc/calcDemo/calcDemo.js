@@ -12,24 +12,7 @@ export default class CalcDemo extends LightningElement {
 
     handleClick(event) {
         this.calcExpression = this.calcExpression + event.target.label;
-        /*
-        if (event.target.label == "+"){
-            this.calcExpression = this.calcExpression + "+" ;
-        }
         
-        if (event.target.label == "-"){
-            this.calcExpression = "";
-            this.result = "";
-        }
-        if (event.target.label == "*"){
-            this.calcExpression = "";
-            this.result = "";
-        }
-        if (event.target.label == "/"){
-            this.calcExpression = "";
-            this.result = "";
-        }
-        */
     }
 
 }
