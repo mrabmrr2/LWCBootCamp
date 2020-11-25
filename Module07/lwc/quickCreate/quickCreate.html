@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <lightning-record-form object-api-name="Account" fields={accountFields} onsuccess={handleSuccessAccount}>
+        </lightning-record-form>
+    </div>
+    <br>
+    <div>
+        <lightning-record-form object-api-name="Contact" fields={contactFields} onsuccess={handleSuccessContact}>
+        </lightning-record-form>
+    </div>
+    <br>
+    <div>
+        <lightning-record-form object-api-name="Opportunity" fields={opportunityFields} onsuccess={handleSuccessOpportunity}>
+        </lightning-record-form>
+    </div>
+</template>
