@@ -1,0 +1,31 @@
+<template>
+    <p>String Id: {strId}</p>
+    <template for:each={books} for:item="book">
+        <lightning-card key={book.Id} title={book.Name}>
+            <lightning-button label="Update" slot="actions" onclick={editBook}></lightning-button>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                    <span class="centerImage">
+                        <img src={book.Image_Link__c} alt="" style="width:50%;height:50%;">
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <span>
+                        <p class="slds-p-horizontal_small">Author: {book.Authors__c}</p>
+                        <p class="slds-p-horizontal_small">Publisher: {book.Publisher__c}</p>
+                        <p class="slds-p-horizontal_small">ISBN 13: {book.ISBN_13__c}</p>
+                        <p class="slds-p-horizontal_small">ISBN 10: {book.ISBN_10__c}</p>
+                        <p class="slds-p-horizontal_small">Year Published: {book.Year_Published__c}</p>
+                        <p class="slds-p-horizontal_small">Num of pages: {book.Page_Count__c}</p>
+                        <p class="slds-p-horizontal_small">Goodreads Book Id: {book.Goodreads_Book_Id__c}</p>
+                        <p class="slds-p-horizontal_small">Average Rating: {book.Average_Rating__c}</p>
+                    </span>
+                </div>
+            </div>
+            
+            <div slot="footer">
+                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete" class="slds-m-left_xx-small" title="Delete" slot="actions" onclick={deleteBook}></lightning-button-icon>
+            </div>
+        </lightning-card>
+    </template>
+</template>

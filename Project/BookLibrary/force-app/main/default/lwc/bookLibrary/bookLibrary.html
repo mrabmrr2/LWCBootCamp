@@ -1,0 +1,28 @@
+<template>
+    <div>
+        <lightning-input type="search" label="Search book in library" value={searchKey} onchange={handleChange}></lightning-input>
+    </div>
+    <div>
+        <p>Displaying result: {bookSize}</p>
+        <p>String Id:{strId}</p>
+    </div>
+    <div class="c-container">
+        <lightning-layout multiple-rows="true">
+            <template for:each={books} for:item="book">
+                <lightning-layout-item key={book.Id}  padding="around-small" size="3" >
+                    <div class="header-column" data-id={book.Id} onclick={handleClick}>
+                        <p>{book.Name}</p>
+                        <div>
+                            <img src={book.Image_Link__c} alt="" style="width:50%;height:50%;">
+                        </div>
+                        <p>Author(s): {book.Authors__c}</p>
+                        <p>Publisher: {book.Publisher__c}</p>
+                        <p>ISBN 13: {book.ISBN_13__c}</p>
+                        <p>Year Published: {book.Year_Published__c}</p>
+                        <p>Average Rating: {book.Average_Rating__c}</p>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>
